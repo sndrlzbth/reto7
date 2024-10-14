@@ -8,7 +8,7 @@ export class BooksController {
 
     constructor(private booksService: BooksService){}
     @Post()
-    createUser(@Body() newBook: CreateBookDto): Promise<Book>{
+    createUser(@Body() newBook: CreateBookDto){
        return this.booksService.createBook(newBook);
     }
 
@@ -18,7 +18,7 @@ export class BooksController {
     }
 
     @Get(':id')
-    getBookById(@Param('id', ParseIntPipe) id: number): Promise<Book> {
+    getBookById(@Param('id', ParseIntPipe) id: number){
         return this.booksService.getBookById(id);
     }
 
