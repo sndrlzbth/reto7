@@ -67,4 +67,12 @@ export class UsersService {
         const updatedUser = Object.assign(userFound, user);
         return this.userRepository.save(updatedUser);
     }
+
+    async getUserByUsername(username: string): Promise<User> {
+        return this.userRepository.findOne({
+            where: {
+                username: username,
+            },
+        });
+    }    
 }
