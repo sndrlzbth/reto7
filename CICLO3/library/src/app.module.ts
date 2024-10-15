@@ -22,6 +22,14 @@ import { ConfigModule } from '@nestjs/config';
       database: process.env.POSTGRES_DATABASE,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      ssl: 
+        process.env.POSTGRES_SSL === 'true',
+      extra: {
+        ssl:
+          process.env.POSTGRES_SSL === 'true' ? {
+            rejectUnauthorized: false,
+          } : null,
+      }
     }),
     BooksModule,
     AuthModule,
