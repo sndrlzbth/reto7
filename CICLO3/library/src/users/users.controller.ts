@@ -5,9 +5,10 @@ import { User } from './users.entity';
 import { UpdateBookDto } from 'src/books/dto/update-book.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth } from '@nestjs/swagger';
 
 @ApiTags('Users')
+@ApiBearerAuth()
 @Controller('protected/users')
 export class UsersController {
 
