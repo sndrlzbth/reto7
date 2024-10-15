@@ -15,7 +15,7 @@ export class UsersService {
             }
          });
         
-        if (!userFound) {
+        if (userFound) {
             return new HttpException('User already exists', HttpStatus.CONFLICT);
         }
 
