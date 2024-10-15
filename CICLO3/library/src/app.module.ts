@@ -9,11 +9,11 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'postgres',
       host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: '',
+      port: 5436,
+      username: 'postgres',
+      password: 'postgres',
       database: 'library',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
